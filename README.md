@@ -112,20 +112,6 @@ O notebook procura os CSV em `dados/` e, se não encontrar, no próprio diretór
 células de cima para baixo ele refaz toda a análise, regrava os seis gráficos em `figuras/`
 e salva `dados_preparados.npz`.
 
-### O relatório
-
-`relatorio.md` é a fonte do `relatorio_eda_uefa.pdf`, o documento de 13 páginas entregue na
-disciplina. Ele consome as figuras de `figuras/`, as mesmas que aparecem neste README, então
-rode o notebook antes se quiser regerar tudo do zero:
-
-```bash
-pandoc relatorio.md -o relatorio_eda_uefa.pdf --pdf-engine=xelatex \
-  -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono"
-```
-
-Resumindo o encadeamento: `dados/` → notebook → `figuras/` + `dados_preparados.npz`, e daí
-`relatorio.md` + `figuras/` → PDF.
-
 ## Carregando o conjunto preparado
 
 ```python
